@@ -30,7 +30,7 @@ public class UserDaoService {
 	 
 	 */
 	public User findById(int id) {
-		return users.stream().filter(x -> x.getId().equals(id)).findFirst().get();
+		return users.stream().filter(x -> x.getId().equals(id)).findFirst().orElse(null);
 	}
 	
 	public User addUser(User newUser) {
