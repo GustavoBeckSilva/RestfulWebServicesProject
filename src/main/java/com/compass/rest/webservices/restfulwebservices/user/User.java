@@ -1,14 +1,23 @@
 package com.compass.rest.webservices.restfulwebservices.user;
 
+
+
 import java.time.LocalDate;
+
+import jakarta.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
-public class User {
+@Entity(name = "user_details")
+public class User{
 	
+	@Id
+	@GeneratedValue
 	private Integer id;
 	
 	@Size(min=2, message = "Name should have at least 2 characters")
