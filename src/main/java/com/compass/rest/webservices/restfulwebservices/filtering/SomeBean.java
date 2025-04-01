@@ -1,9 +1,9 @@
 package com.compass.rest.webservices.restfulwebservices.filtering;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
-@JsonIgnoreProperties({"field1", "field2"}) // Não mostra os campos citados no JSON
+// @JsonIgnoreProperties({"field1", "field2"}) // Não mostra os campos citados no JSON - Filtragem estática
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 	
 	//	@JsonIgnore // Não mostra o campo no JSON
